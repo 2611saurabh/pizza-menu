@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App(){
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    return <h1>Hello React</h1>;
+        
+}
+
+function SS(){
+
+    return <h2>Saurabh Kumar</h2>;
+}
+
+function Another(){
+    const x = 'saurabh'
+    return <h2>ssjdjd </h2>
+}
+
+
+
+//react v18 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
+root.render (
+    
+    <React.StrictMode>
+    <div>
+        <App />
+        <SS />
+        <Another />
+    </div>
+    
+    </React.StrictMode>
+
+)
+
+
+//react before v18
+
+// React.render(<App />); // another chage in import function 
+// //import ReactDOM from "react-dom";  we write like this
