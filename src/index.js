@@ -7,15 +7,7 @@ function App(){
         
 }
 
-function SS(){
 
-    return <h2>Saurabh Kumar</h2>;
-}
-
-function Another(){
-    const x = 'saurabh'
-    return <h2>ssjdjd </h2>
-}
 
 
 
@@ -26,12 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render (
     
     <React.StrictMode>
-    <div>
-        <App />
-        <SS />
-        <Another />
-    </div>
-    
+    <App />
     </React.StrictMode>
 
 )

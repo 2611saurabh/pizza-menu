@@ -1,0 +1,7 @@
+compoments
+
+-> React application are entirely made out of compoments
+-> Building blocks of user interfaces in React
+-> Piece of UI that Has ists own data logic, and apperence (how it works and looks)
+
+  
