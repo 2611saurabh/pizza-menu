@@ -77,7 +77,16 @@ function Menu(){
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza 
+
+      <ul className="pizzas">
+        {pizzaData.map(pizza => (
+
+          <Pizza pizzaObj={pizza} key={pizza.name} />
+
+        ))}
+      </ul>
+
+      {/* <Pizza 
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
         photoName="pizzas/spinaci.jpg"
@@ -87,9 +96,9 @@ function Menu(){
       <Pizza 
         name="Pizza Funghi"
         ingredients="Tommato, mushrooms"
-        price={12}
+        price={12 }
         photoName="pizzas/funghi.jpg"
-      />
+      /> */}
       
     </main>
   );
@@ -100,27 +109,32 @@ function Menu(){
 function Pizza(props) {
 
   return (
+    <li className="pizzas">
       <div className="pizza">
-        <img src={props.photoName} alt={props.name} />
+        <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
         <div>
-          <h3>{props.name}</h3>
-          <p>{props.ingredients}</p>
-          <span>{props.price + 3}</span>
+          <h3>{props.pizzaObj.name}</h3>
+          <p>{props.pizzaObj.ingredients}</p>
+          <span>{props.pizzaObj.price}</span>
         </div>
       
       </div>
+
+    </li>
+      
   )
   
   
 }
 
 function Footer(){
-  // return React.createElement("footer", null, "We're currently open!");
-  //const hour = new Date().getHours();
-  //console.log(hour);
-  // const openHour = 8;
-  // const closeHour = 22;
-  // const isOpen = hour >= openHour && hour <= closeHour
+    // return React.createElement("footer", null, "We're currently open!");
+    const hour = new Date().getHours();
+    console.log(hour);
+    const openHour =12;
+    const closeHour = 22;
+    const isOpen = hour >= openHour && hour <= closeHour
+    console.log(openHour);
 
   // if(hour >= openHour && hour <= closeHour)
   // {
