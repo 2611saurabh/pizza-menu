@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import './index.css';
 
 
 const pizzaData = [
@@ -52,7 +53,7 @@ const pizzaData = [
 function App(){
 
     return (
-        <div>
+        <div className="container">
             <Header />
             <Menu />
             <Footer />
@@ -63,30 +64,63 @@ function App(){
 
 function Header(){
 
-  return <h1>Fast React Pizza Co.</h1>
+  const style = {};
+  return (
+    <header className="header">
+        <h1 style={style}>Fast React Pizza Co.</h1>
+    </header>
+  ); 
 }
 
 function Menu(){
 
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
-    </div>
+      <Pizza 
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={10}
+      />
+
+      <Pizza 
+        name="Pizza Funghi"
+        ingredients="Tommato, mushrooms"
+        price={12}
+        photoName="pizzas/funghi.jpg"
+      />
+      
+    </main>
   );
 
 }
 
+
+function Pizza(props) {
+
+  return (
+      <div className="pizza">
+        <img src={props.photoName} alt={props.name} />
+        <div>
+          <h3>{props.name}</h3>
+          <p>{props.ingredients}</p>
+          <span>{props.price + 3}</span>
+        </div>
+      
+      </div>
+  )
+  
+  
+}
+
 function Footer(){
   // return React.createElement("footer", null, "We're currently open!");
-  const hour = new Date().getHours();
+  //const hour = new Date().getHours();
   //console.log(hour);
-  const openHour = 8;
-  const closeHour = 22;
-  const isOpen = hour >= openHour && hour <= closeHour
+  // const openHour = 8;
+  // const closeHour = 22;
+  // const isOpen = hour >= openHour && hour <= closeHour
 
   // if(hour >= openHour && hour <= closeHour)
   // {
@@ -97,7 +131,12 @@ function Footer(){
   // }
 
 
-  return <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
+  return (
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}. We're currently open
+    </footer>
+  );
+    
 
 
 }
@@ -105,17 +144,7 @@ function Footer(){
 
 
 
-function Pizza() {
-    return (
-        <div>
-        <img src="pizzas/spinaci.jpg" alt="" />
-        <h2>Pizza Spinaci</h2>
-        <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
-    </div>
-    )
-    
-    
-}
+
 
 
 
